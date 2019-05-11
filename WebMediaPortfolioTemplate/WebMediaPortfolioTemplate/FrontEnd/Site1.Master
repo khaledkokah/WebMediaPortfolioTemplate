@@ -1,0 +1,199 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebMediaPortfolioTemplate.FrontEnd.Site1" %>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>WebMediaPortfolioTemplate </title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/frontEnd/Assets/img/core-img/favicon.ico">
+
+    <!-- Styles Start -->
+    <link rel="stylesheet" href="/frontEnd/Assets/style.css">
+    <link href="/frontEnd/Assets/sakura/jquery-sakura.css" rel="stylesheet" />
+    <!-- Styles End -->
+</head>
+
+<body>
+    <form runat="server">
+        <!-- Preloader -->
+        <div id="preloader">
+            <i class="circle-preloader"></i>
+            <img src="/frontEnd/Assets/img/core-img/salad.png" alt="">
+        </div>
+
+        <!-- Search Wrapper -->
+        <div class="search-wrapper">
+            <!-- Close Btn -->
+            <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <form action="#" method="post">
+                            <input type="search" name="search" placeholder="Type any keywords...">
+                            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  Header Area Start  -->
+        <header class="header-area">
+
+            <!-- Top Header Area -->
+            <div class="top-header-area">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center justify-content-between">
+                        <!-- Breaking News -->
+                        <div class="col-12 col-sm-6">
+                            <div class="breaking-news">
+                                <div id="breakingNewsTicker" class="ticker">
+                                    <ul>
+                                        <li><a href="#">WebMediaPortfolioTemplate  Website</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Top Social Info -->
+                        <div class="col-12 col-sm-6">
+                            <div class="top-social-info text-right">
+                                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-snapchat" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navbar Area -->
+            <div class="delicious-main-menu" style="background: -webkit-linear-gradient(top, #fdfdfd, #f5f6f7); background-image: -webkit-linear-gradient(top, rgb(225, 227, 232), rgb(245, 246, 247)); background-position-x: initial; background-position-y: initial; background-size: initial; background-repeat-x: initial; background-repeat-y: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial;">
+                <div class="classy-nav-container breakpoint-off">
+                    <div class="container">
+                        <!-- Menu -->
+                        <nav class="classy-navbar justify-content-between" id="deliciousNav">
+
+                            <!-- Logo -->
+                            <a class="nav-brand" href="/default.aspx">
+                                <img src="/frontEnd/Assets/img/core-img/icon.png" width="144" height="65" alt=""></a>
+
+                            <!-- Navbar Toggler -->
+                            <div class="classy-navbar-toggler">
+                                <span class="navbarToggler"><span></span><span></span><span></span></span>
+                            </div>
+
+                            <!-- Menu -->
+                            <div class="classy-menu">
+
+                                <!-- close btn -->
+                                <div class="classycloseIcon">
+                                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                                </div>
+
+                                <!-- Nav Start -->
+                                <div class="classynav">
+                                    <ul>
+                                        <li><a href="/default.aspx">Home</a></li>
+                                        <li><a href="/contactus.aspx">Contact us </a></li>
+                                        <%--</ul>--%>
+                                </div>
+                                <!-- Nav End -->
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--  Header End  -->
+
+
+        <div style="background-color: #b3b3b3; border-top: 1px solid #dcdcdc;" />
+
+        <asp:ContentPlaceHolder ID="cpHeader" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <!-- Banner Start  -->
+        <section style="display: none;" class="hero-area">
+            <div class="hero-slides owl-carousel">
+                <!-- Banner -->
+                <div class="single-hero-slide bg-img" style="background-image: url(/frontEnd/Assets/img/bg-img/banner.png);">
+                </div>
+            </div>
+        </section>
+        <!-- Banner End  -->
+
+        <div style="border-top: 1px solid #dcdcdc;" />
+
+        <!--  Top Catagory Area Start  -->
+        <section class="top-catagory-area" style="padding-top: 40px; background: -webkit-linear-gradient(top, #fdfdfd, #f5f6f7); background-image: -webkit-linear-gradient(top, rgb(225, 227, 232), rgb(245, 246, 247)); background-position-x: initial; background-position-y: initial; background-size: initial; background-repeat-x: initial; background-repeat-y: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial;">
+            <div class="container">
+                <asp:ContentPlaceHolder runat="server" ID="cpContent" />
+
+            </div>
+        </section>
+    </form>
+
+    <div style="border-top: 1px solid #dcdcdc;" />
+
+    <footer class="footer-area" style="background: -webkit-linear-gradient(left, #fdfdfd, #f5f6f7); background-image: -webkit-linear-gradient(left, rgb(225, 227, 232), rgb(245, 246, 247)); background-position-x: initial; background-position-y: initial; background-size: initial; background-repeat-x: initial; background-repeat-y: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial;">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
+                    <!-- Footer Social Info -->
+                    <div class="footer-social-info text-right">
+                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-snapchat" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                    <!-- Footer Logo -->
+                    <div class="footer-logo">
+                        <a href="/default.aspx">
+                            <img src="/frontEnd/Assets/img/core-img/logo2.png" alt=""></a>
+                    </div>
+                    <p>
+                        WebMediaPortfolioTemplate 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Start -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="/frontEnd/Assets/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="/frontEnd/Assets/js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/frontEnd/Assets/js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="/frontEnd/Assets/js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="/frontEnd/Assets/js/active.js"></script>
+    <link href="/frontEnd/Assets/lity.css" rel="stylesheet">
+    <script src="/frontEnd/Assets/lity.js"></script>
+    <script src="/frontEnd/Assets/sakura/jquery-sakura.min.js"></script>
+    <script>
+        $(window).load(function () {
+            $('body').sakura();
+        });
+    </script>
+    <!-- Scripts End -->
+</body>
+
+</html>

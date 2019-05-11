@@ -1,0 +1,926 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A6C873C8-AAEB-4A22-820A-4C2A21151D96}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebMediaPortfolioTemplate</RootNamespace>
+    <AssemblyName>WebMediaPortfolioTemplate</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.18.1.1\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\AdminLogin.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="App_JS\Setup\codingType.js" />
+    <Content Include="App_JS\Setup\content.js" />
+    <Content Include="Assets\login1\css\main.css" />
+    <Content Include="Assets\login1\css\util.css" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Assets\login1\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="Assets\login1\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="Assets\login1\fonts\montserrat\OFL.txt" />
+    <Content Include="Assets\login1\fonts\raleway\OFL.txt" />
+    <Content Include="Assets\login1\images\avatar-01.jpg" />
+    <Content Include="Assets\login1\images\icons\favicon.ico" />
+    <Content Include="Assets\login1\images\icons\icon-google.png" />
+    <Content Include="Assets\login1\images\img-01.jpg" />
+    <Content Include="Assets\login1\js\main.js" />
+    <Content Include="Assets\login1\vendor\animate\animate.css" />
+    <Content Include="Assets\login1\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Assets\login1\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Assets\login1\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Assets\login1\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Assets\login1\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Assets\login1\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Assets\login1\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Assets\login1\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Assets\login1\vendor\bootstrap\js\popper.js" />
+    <Content Include="Assets\login1\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Assets\login1\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Assets\login1\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Assets\login1\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Assets\login1\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Assets\login1\vendor\select2\select2.css" />
+    <Content Include="Assets\login1\vendor\select2\select2.js" />
+    <Content Include="Assets\login1\vendor\select2\select2.min.css" />
+    <Content Include="Assets\login1\vendor\select2\select2.min.js" />
+    <Content Include="ContactUs.aspx" />
+    <Content Include="FrontEnd\Assets\css\animate.css" />
+    <Content Include="FrontEnd\Assets\css\bootstrap.min.css" />
+    <Content Include="FrontEnd\Assets\css\classy-nav.min.css" />
+    <Content Include="FrontEnd\Assets\css\custom-icon.css" />
+    <Content Include="FrontEnd\Assets\css\font-awesome.min.css" />
+    <Content Include="FrontEnd\Assets\css\magnific-popup.css" />
+    <Content Include="FrontEnd\Assets\css\nice-select.min.css" />
+    <Content Include="FrontEnd\Assets\css\owl.carousel.min.css" />
+    <Content Include="FrontEnd\Assets\fonts\classy.svg" />
+    <Content Include="FrontEnd\Assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="FrontEnd\Assets\fonts\icomoon.svg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\about.png" />
+    <Content Include="FrontEnd\Assets\img\bg-img\add.png" />
+    <Content Include="FrontEnd\Assets\img\bg-img\banner.png" />
+    <Content Include="FrontEnd\Assets\img\bg-img\banner2.png" />
+    <Content Include="FrontEnd\Assets\img\bg-img\bg1.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\bg2.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\bg3.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\bg4.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\bg5.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\bg6.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\bg7.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\breadcumb1.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\breadcumb2.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\breadcumb3.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\breadcumb4.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\breadcumb4.png" />
+    <Content Include="FrontEnd\Assets\img\bg-img\breadcumb5.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\insta1.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\insta2.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\insta3.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\insta4.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\insta5.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\insta6.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\insta7.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\media.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\mediaerr.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\pdf.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\r1.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\r2.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\r3.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\r4.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\r5.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\r6.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\sr1.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\sr2.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\sr3.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\sr4.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\sr5.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\sr6.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\sr7.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\sr8.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\sr9.jpg" />
+    <Content Include="FrontEnd\Assets\img\bg-img\vid.jpg" />
+    <Content Include="FrontEnd\Assets\img\blog-img\1.jpg" />
+    <Content Include="FrontEnd\Assets\img\blog-img\2.jpg" />
+    <Content Include="FrontEnd\Assets\img\blog-img\3.jpg" />
+    <Content Include="FrontEnd\Assets\img\core-img\burger.svg" />
+    <Content Include="FrontEnd\Assets\img\core-img\cake2.png" />
+    <Content Include="FrontEnd\Assets\img\core-img\favicon.ico" />
+    <Content Include="FrontEnd\Assets\img\core-img\hamburger.png" />
+    <Content Include="FrontEnd\Assets\img\core-img\hamburger2.png" />
+    <Content Include="FrontEnd\Assets\img\core-img\icon.png" />
+    <Content Include="FrontEnd\Assets\img\core-img\logo.png" />
+    <Content Include="FrontEnd\Assets\img\core-img\logo1.png" />
+    <Content Include="FrontEnd\Assets\img\core-img\logo2.png" />
+    <Content Include="FrontEnd\Assets\img\core-img\pancake.png" />
+    <Content Include="FrontEnd\Assets\img\core-img\pizza.png" />
+    <Content Include="FrontEnd\Assets\img\core-img\rib.png" />
+    <Content Include="FrontEnd\Assets\img\core-img\salad.png" />
+    <Content Include="FrontEnd\Assets\lity.css" />
+    <Content Include="FrontEnd\Assets\lity.js" />
+    <Content Include="FrontEnd\Assets\lity.min.css" />
+    <Content Include="FrontEnd\Assets\lity.min.js" />
+    <Content Include="FrontEnd\Assets\sakura\jquery-sakura.css" />
+    <Content Include="FrontEnd\Assets\sakura\jquery-sakura.js" />
+    <Content Include="FrontEnd\Assets\sakura\jquery-sakura.min.css" />
+    <Content Include="FrontEnd\Assets\sakura\jquery-sakura.min.js" />
+    <Content Include="FrontEnd\contact.html" />
+    <Content Include="FrontEnd\Content.aspx" />
+    <Content Include="FrontEnd\Categories.aspx" />
+    <Content Include="Account\FEChangePassword.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="FrontEnd\index.html" />
+    <Content Include="FrontEnd\Assets\js\active.js" />
+    <Content Include="FrontEnd\Assets\js\bootstrap\bootstrap.min.js" />
+    <Content Include="FrontEnd\Assets\js\bootstrap\popper.min.js" />
+    <Content Include="FrontEnd\Assets\js\google-map\map-active.js" />
+    <Content Include="FrontEnd\Assets\js\jquery\jquery-2.2.4.min.js" />
+    <Content Include="FrontEnd\Assets\js\plugins\plugins.js" />
+    <Content Include="FrontEnd\Assets\style.css" />
+    <Content Include="Views\CodingType.aspx" />
+    <Content Include="Views\Coding.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="App_JS\Operations\booking.js" />
+    <Content Include="App_JS\Operations\payment.js" />
+    <Content Include="App_JS\Operations\transaction.js" />
+    <Content Include="App_JS\Operations\transactionDetails.js" />
+    <Content Include="App_JS\Setup\coding.js" />
+    <Content Include="App_JS\Setup\parking.js" />
+    <Content Include="App_JS\Setup\people.js" />
+    <Content Include="App_JS\Setup\policy.js" />
+    <Content Include="App_JS\Setup\policyDetails.js" />
+    <Content Include="App_JS\Setup\properties.js" />
+    <Content Include="App_JS\Setup\towers.js" />
+    <Content Include="App_JS\template.js" />
+    <Content Include="Assets\build\css\custom.css" />
+    <Content Include="Assets\build\css\custom.min.css" />
+    <Content Include="Assets\build\images\back_disabled.png" />
+    <Content Include="Assets\build\images\back_enabled.png" />
+    <Content Include="Assets\build\images\back_enabled_hover.png" />
+    <Content Include="Assets\build\images\forward_disabled.png" />
+    <Content Include="Assets\build\images\forward_enabled.png" />
+    <Content Include="Assets\build\images\forward_enabled_hover.png" />
+    <Content Include="Assets\build\images\loading.gif" />
+    <Content Include="Assets\build\js\custom.js" />
+    <Content Include="Assets\build\js\custom.min.js" />
+    <Content Include="Assets\css\custom.css" />
+    <Content Include="Assets\css\custom.min.css" />
+    <Content Include="Assets\css\Menu.css" />
+    <Content Include="Assets\images\back_disabled.png" />
+    <Content Include="Assets\images\back_enabled.png" />
+    <Content Include="Assets\images\back_enabled_hover.png" />
+    <Content Include="Assets\images\delete.png" />
+    <Content Include="Assets\images\edit.png" />
+    <Content Include="Assets\images\favicon.ico" />
+    <Content Include="Assets\images\forward_disabled.png" />
+    <Content Include="Assets\images\forward_enabled.png" />
+    <Content Include="Assets\images\forward_enabled_hover.png" />
+    <Content Include="Assets\images\loading.gif" />
+    <Content Include="Assets\images\logo.png" />
+    <Content Include="Assets\images\TD.jpg" />
+    <Content Include="Assets\js\custom.js" />
+    <Content Include="Assets\js\custom.min.js" />
+    <Content Include="Assets\js\pdfobject.js" />
+    <Content Include="Assets\login\assets\ajax.googleapis.com\ajax\libs\webfont\1.6.16\webfont.js" />
+
+    <Content Include="Assets\login\assets\app\media\img\logos\logo-2.png" />
+    <Content Include="Assets\login\assets\demo\default\base\scripts.bundle.js" />
+    <Content Include="Assets\login\assets\demo\default\base\style.bundle.css" />
+    <Content Include="Assets\login\assets\demo\default\media\img\logo\favicon.ico" />
+    <Content Include="Assets\login\assets\snippets\pages\user\login.js" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\flaticon\Flaticon.svg" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\font-awesome\fontawesome-webfont3e6e.svg" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\line-awesome\line-awesomeeb4f.svg" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\metronic\Metronic_fda1334c35d0f5fe2afb3afebbb6774a.svg" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\socicon\socicon.svg" />
+    <Content Include="Assets\login\assets\vendors\base\images\ion-rangeslider\sprite-skin-flat.png" />
+    <Content Include="Assets\login\assets\vendors\base\images\jstree\32px.png" />
+    <Content Include="Assets\login\assets\vendors\base\images\jstree\40px.png" />
+    <Content Include="Assets\login\assets\vendors\base\images\jstree\throbber.gif" />
+    <Content Include="Assets\login\assets\vendors\base\images\malihu-custom-scrollbar-plugin\mCSB_buttons.png" />
+    <Content Include="Assets\login\assets\vendors\base\vendors.bundle.css" />
+    <Content Include="Assets\login\assets\vendors\base\vendors.bundle.js" />
+    <Content Include="Assets\login\assets\www.google-analytics.com\analytics.js" />
+    <Content Include="Assets\vendors\autosize\dist\autosize.js" />
+    <Content Include="Assets\vendors\autosize\dist\autosize.min.js" />
+    <Content Include="Assets\vendors\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Assets\vendors\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Assets\vendors\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Assets\vendors\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Assets\vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\vendors\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Assets\vendors\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Assets\vendors\bootstrap\dist\js\npm.js" />
+    <Content Include="Assets\vendors\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\vendors\bootstrap\js\affix.js" />
+    <Content Include="Assets\vendors\bootstrap\js\alert.js" />
+    <Content Include="Assets\vendors\bootstrap\js\button.js" />
+    <Content Include="Assets\vendors\bootstrap\js\carousel.js" />
+    <Content Include="Assets\vendors\bootstrap\js\collapse.js" />
+    <Content Include="Assets\vendors\bootstrap\js\dropdown.js" />
+    <Content Include="Assets\vendors\bootstrap\js\modal.js" />
+    <Content Include="Assets\vendors\bootstrap\js\popover.js" />
+    <Content Include="Assets\vendors\bootstrap\js\scrollspy.js" />
+    <Content Include="Assets\vendors\bootstrap\js\tab.js" />
+    <Content Include="Assets\vendors\bootstrap\js\tooltip.js" />
+    <Content Include="Assets\vendors\bootstrap\js\transition.js" />
+    <Content Include="Assets\vendors\fastclick\lib\fastclick.js" />
+    <Content Include="Assets\vendors\font-awesome\css\font-awesome.css" />
+    <Content Include="Assets\vendors\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Assets\vendors\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\vendors\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Assets\vendors\google-code-prettify\bin\prettify.min.css" />
+    <Content Include="Assets\vendors\google-code-prettify\bin\prettify.min.js" />
+    <Content Include="Assets\vendors\google-code-prettify\bin\run_prettify.min.js" />
+    <Content Include="Assets\vendors\google-code-prettify\CHANGES.html" />
+    <Content Include="Assets\vendors\google-code-prettify\examples\quine.html" />
+    <Content Include="Assets\vendors\google-code-prettify\README-zh-Hans.html" />
+    <Content Include="Assets\vendors\google-code-prettify\README.html" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-apollo.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-basic.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-clj.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-css.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-dart.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-erlang.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-go.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-hs.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-lisp.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-llvm.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-lua.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-matlab.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-ml.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-mumps.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-n.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-pascal.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-proto.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-r.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-rd.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-scala.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-sql.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-tcl.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-tex.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-vb.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-vhdl.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-wiki.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-xq.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\lang-yaml.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\prettify.css" />
+    <Content Include="Assets\vendors\google-code-prettify\src\prettify.js" />
+    <Content Include="Assets\vendors\google-code-prettify\src\run_prettify.js" />
+    <Content Include="Assets\vendors\google-code-prettify\styles\demo.html" />
+    <Content Include="Assets\vendors\google-code-prettify\styles\desert.css" />
+    <Content Include="Assets\vendors\google-code-prettify\styles\doxy.css" />
+    <Content Include="Assets\vendors\google-code-prettify\styles\index.html" />
+    <Content Include="Assets\vendors\google-code-prettify\styles\sons-of-obsidian.css" />
+    <Content Include="Assets\vendors\google-code-prettify\styles\sunburst.css" />
+    <Content Include="Assets\vendors\iCheck\skins\all.css" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\aero%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\aero.css" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\aero.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\blue%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\blue.css" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\blue.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\flat%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\flat.css" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\flat.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\green%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\green.css" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\green.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\grey%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\grey.css" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\grey.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\orange%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\orange.css" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\orange.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\pink%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\pink.css" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\pink.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\purple%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\purple.css" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\purple.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\red%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\red.css" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\red.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\yellow%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\yellow.css" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\yellow.png" />
+    <Content Include="Assets\vendors\iCheck\skins\flat\_all.css" />
+    <Content Include="Assets\vendors\iCheck\skins\futurico\futurico%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\futurico\futurico.css" />
+    <Content Include="Assets\vendors\iCheck\skins\futurico\futurico.png" />
+    <Content Include="Assets\vendors\iCheck\skins\line\aero.css" />
+    <Content Include="Assets\vendors\iCheck\skins\line\blue.css" />
+    <Content Include="Assets\vendors\iCheck\skins\line\green.css" />
+    <Content Include="Assets\vendors\iCheck\skins\line\grey.css" />
+    <Content Include="Assets\vendors\iCheck\skins\line\line%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\line\line.css" />
+    <Content Include="Assets\vendors\iCheck\skins\line\line.png" />
+    <Content Include="Assets\vendors\iCheck\skins\line\orange.css" />
+    <Content Include="Assets\vendors\iCheck\skins\line\pink.css" />
+    <Content Include="Assets\vendors\iCheck\skins\line\purple.css" />
+    <Content Include="Assets\vendors\iCheck\skins\line\red.css" />
+    <Content Include="Assets\vendors\iCheck\skins\line\yellow.css" />
+    <Content Include="Assets\vendors\iCheck\skins\line\_all.css" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\aero%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\aero.css" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\aero.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\blue%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\blue.css" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\blue.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\green%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\green.css" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\green.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\grey%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\grey.css" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\grey.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\minimal%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\minimal.css" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\minimal.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\orange%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\orange.css" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\orange.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\pink%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\pink.css" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\pink.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\purple%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\purple.css" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\purple.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\red%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\red.css" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\red.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\yellow%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\yellow.css" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\yellow.png" />
+    <Content Include="Assets\vendors\iCheck\skins\minimal\_all.css" />
+    <Content Include="Assets\vendors\iCheck\skins\polaris\polaris%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\polaris\polaris.css" />
+    <Content Include="Assets\vendors\iCheck\skins\polaris\polaris.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\aero%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\aero.css" />
+    <Content Include="Assets\vendors\iCheck\skins\square\aero.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\blue%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\blue.css" />
+    <Content Include="Assets\vendors\iCheck\skins\square\blue.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\green%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\green.css" />
+    <Content Include="Assets\vendors\iCheck\skins\square\green.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\grey%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\grey.css" />
+    <Content Include="Assets\vendors\iCheck\skins\square\grey.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\orange%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\orange.css" />
+    <Content Include="Assets\vendors\iCheck\skins\square\orange.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\pink%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\pink.css" />
+    <Content Include="Assets\vendors\iCheck\skins\square\pink.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\purple%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\purple.css" />
+    <Content Include="Assets\vendors\iCheck\skins\square\purple.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\red%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\red.css" />
+    <Content Include="Assets\vendors\iCheck\skins\square\red.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\square%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\square.css" />
+    <Content Include="Assets\vendors\iCheck\skins\square\square.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\yellow%402x.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\yellow.css" />
+    <Content Include="Assets\vendors\iCheck\skins\square\yellow.png" />
+    <Content Include="Assets\vendors\iCheck\skins\square\_all.css" />
+    <Content Include="Assets\vendors\jquery\dist\jquery.min.js" />
+    <Content Include="Assets\vendors\nprogress\nprogress.css" />
+    <Content Include="Assets\vendors\select2\dist\css\select2.css" />
+    <Content Include="Assets\vendors\select2\dist\css\select2.min.css" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\ar.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\az.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\bg.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\ca.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\cs.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\da.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\de.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\el.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\en.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\es.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\et.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\eu.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\fa.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\fi.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\fr.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\gl.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\he.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\hi.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\hr.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\hu.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\id.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\is.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\it.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\ja.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\km.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\ko.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\lt.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\lv.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\mk.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\ms.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\nb.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\nl.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\pl.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\pt-BR.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\pt.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\ro.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\ru.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\sk.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\sr-Cyrl.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\sr.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\sv.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\th.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\tr.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\uk.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\vi.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\zh-CN.js" />
+    <Content Include="Assets\vendors\select2\dist\js\i18n\zh-TW.js" />
+    <Content Include="Assets\vendors\select2\dist\js\select2.full.js" />
+    <Content Include="Assets\vendors\select2\dist\js\select2.full.min.js" />
+    <Content Include="Assets\vendors\select2\dist\js\select2.js" />
+    <Content Include="Assets\vendors\select2\dist\js\select2.min.js" />
+    <Content Include="Assets\vendors\starrr\dist\starrr.css" />
+    <Content Include="Assets\vendors\starrr\dist\starrr.js" />
+    <Content Include="Assets\vendors\switchery\dist\switchery.css" />
+    <Content Include="Assets\vendors\switchery\dist\switchery.js" />
+    <Content Include="Assets\vendors\switchery\dist\switchery.min.css" />
+    <Content Include="Assets\vendors\switchery\dist\switchery.min.js" />
+    <Content Include="Global.asax" />
+    <Content Include="AdminHome.aspx" />
+    <Content Include="UserControls\ModalStamp.ascx" />
+    <Content Include="Views\Content.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Encryption.cs" />
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontEnd\Content.aspx.cs">
+      <DependentUpon>Content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontEnd\Content.aspx.designer.cs">
+      <DependentUpon>Content.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontEnd\Categories.aspx.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontEnd\Categories.aspx.designer.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\FEChangePassword.aspx.cs">
+      <DependentUpon>FEChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\FEChangePassword.aspx.designer.cs">
+      <DependentUpon>FEChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontEnd\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontEnd\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CodingType_Model.cs" />
+    <Compile Include="Models\Content_Model.cs" />
+    <Compile Include="Views\CodingType.aspx.cs">
+      <DependentUpon>CodingType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CodingType.aspx.designer.cs">
+      <DependentUpon>CodingType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Coding.aspx.cs">
+      <DependentUpon>Coding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Coding.aspx.designer.cs">
+      <DependentUpon>Coding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\AppConstants.cs" />
+    <Compile Include="Classes\BaseWebForm.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Classes\DBManager.cs" />
+    <Compile Include="Classes\ExceptionUtility.cs" />
+    <Compile Include="Classes\Helper.cs" />
+    <Compile Include="Classes\MethodExtension.cs" />
+    <Compile Include="Classes\Parsers.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Coding_Model.cs" />
+    <Compile Include="Models\UserAccount.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ModalStamp.ascx.cs">
+      <DependentUpon>ModalStamp.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ModalStamp.ascx.designer.cs">
+      <DependentUpon>ModalStamp.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Content.aspx.cs">
+      <DependentUpon>Content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Content.aspx.designer.cs">
+      <DependentUpon>Content.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\login\assets\vendors\base\fonts\flaticon\Flaticon.eot" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\flaticon\Flaticon.ttf" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\flaticon\Flaticon.woff" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\flaticon\Flaticond41d.eot" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\font-awesome\fontawesome-webfont3e6e.eot" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\font-awesome\fontawesome-webfont3e6e.ttf" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\font-awesome\fontawesome-webfont3e6e.woff" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\font-awesome\fontawesome-webfont3e6e.woff2" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\font-awesome\fontawesome-webfontd41d.eot" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\line-awesome\line-awesome0176.eot" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\line-awesome\line-awesomeeb4f.eot" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\line-awesome\line-awesomeeb4f.ttf" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\line-awesome\line-awesomeeb4f.woff" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\line-awesome\line-awesomeeb4f.woff2" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\metronic\Metronic_fda1334c35d0f5fe2afb3afebbb6774a.eot" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\metronic\Metronic_fda1334c35d0f5fe2afb3afebbb6774a.ttf" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\metronic\Metronic_fda1334c35d0f5fe2afb3afebbb6774a.woff" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\metronic\Metronic_fda1334c35d0f5fe2afb3afebbb6774a.woff2" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\metronic\Metronic_fda1334c35d0f5fe2afb3afebbb6774ad41d.eot" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\socicon\socicon.eot" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\socicon\socicon.ttf" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\socicon\socicon.woff" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\socicon\socicond41d.eot" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\summernote\summernote4c4d.eot" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\summernote\summernote4c4d.ttf" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\summernote\summernote4c4d.woff" />
+    <Content Include="Assets\login\assets\vendors\base\fonts\summernote\summernoted41d.eot" />
+    <Content Include="Assets\vendors\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Assets\vendors\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Assets\vendors\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Assets\vendors\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Assets\vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Assets\vendors\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\vendors\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\vendors\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\vendors\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Assets\vendors\bootstrap\js\.jscsrc" />
+    <Content Include="Assets\vendors\bootstrap\js\.jshintrc" />
+    <Content Include="Assets\vendors\font-awesome\.bower.json" />
+    <Content Include="Assets\vendors\font-awesome\.gitignore" />
+    <Content Include="Assets\vendors\font-awesome\.npmignore" />
+    <Content Include="Assets\vendors\font-awesome\bower.json" />
+    <Content Include="Assets\vendors\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Assets\vendors\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets\vendors\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\vendors\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\vendors\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Assets\vendors\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Assets\vendors\font-awesome\less\animated.less" />
+    <Content Include="Assets\vendors\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Assets\vendors\font-awesome\less\core.less" />
+    <Content Include="Assets\vendors\font-awesome\less\fixed-width.less" />
+    <Content Include="Assets\vendors\font-awesome\less\font-awesome.less" />
+    <Content Include="Assets\vendors\font-awesome\less\icons.less" />
+    <Content Include="Assets\vendors\font-awesome\less\larger.less" />
+    <Content Include="Assets\vendors\font-awesome\less\list.less" />
+    <Content Include="Assets\vendors\font-awesome\less\mixins.less" />
+    <Content Include="Assets\vendors\font-awesome\less\path.less" />
+    <Content Include="Assets\vendors\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Assets\vendors\font-awesome\less\screen-reader.less" />
+    <Content Include="Assets\vendors\font-awesome\less\stacked.less" />
+    <Content Include="Assets\vendors\font-awesome\less\variables.less" />
+    <Content Include="Assets\vendors\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Assets\vendors\font-awesome\scss\_animated.scss" />
+    <Content Include="Assets\vendors\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Assets\vendors\font-awesome\scss\_core.scss" />
+    <Content Include="Assets\vendors\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Assets\vendors\font-awesome\scss\_icons.scss" />
+    <Content Include="Assets\vendors\font-awesome\scss\_larger.scss" />
+    <Content Include="Assets\vendors\font-awesome\scss\_list.scss" />
+    <Content Include="Assets\vendors\font-awesome\scss\_mixins.scss" />
+    <Content Include="Assets\vendors\font-awesome\scss\_path.scss" />
+    <Content Include="Assets\vendors\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Assets\vendors\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Assets\vendors\font-awesome\scss\_stacked.scss" />
+    <Content Include="Assets\vendors\font-awesome\scss\_variables.scss" />
+    <Content Include="Assets\vendors\google-code-prettify\.bower.json" />
+    <Content Include="Assets\vendors\google-code-prettify\bower.json" />
+    <Content Include="Assets\vendors\google-code-prettify\COPYING" />
+    <Content Include="Assets\vendors\google-code-prettify\README.md" />
+    <Content Include="Assets\vendors\jquery\dist\jquery.min.map" />
+    <Content Include="FrontEnd\Assets\.sass-cache\9dcd260a98b05df5e2bbaebb993f2e918e16ad1d\style.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\9dcd260a98b05df5e2bbaebb993f2e918e16ad1d\_fonts.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\9dcd260a98b05df5e2bbaebb993f2e918e16ad1d\_mixin.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\9dcd260a98b05df5e2bbaebb993f2e918e16ad1d\_responsive.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\9dcd260a98b05df5e2bbaebb993f2e918e16ad1d\_theme_color.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\b687762b7660b1f71ae40e600add14c590cfdbc7\style.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\b687762b7660b1f71ae40e600add14c590cfdbc7\_mixin.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\b687762b7660b1f71ae40e600add14c590cfdbc7\_responsive.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\b687762b7660b1f71ae40e600add14c590cfdbc7\_theme_color.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\b687762b7660b1f71ae40e600add14c590cfdbc7\_variables.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\cd34cfe2239c57be653ecbef896fb3750f9e6f5b\style.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\cd34cfe2239c57be653ecbef896fb3750f9e6f5b\_fonts.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\cd34cfe2239c57be653ecbef896fb3750f9e6f5b\_mixin.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\cd34cfe2239c57be653ecbef896fb3750f9e6f5b\_responsive.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\cd34cfe2239c57be653ecbef896fb3750f9e6f5b\_theme_color.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\cd34cfe2239c57be653ecbef896fb3750f9e6f5b\_variables.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\eb65a9acf275cb72706472a84a7409ec6f3ac36a\style.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\eb65a9acf275cb72706472a84a7409ec6f3ac36a\_mixin.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\eb65a9acf275cb72706472a84a7409ec6f3ac36a\_responsive.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\eb65a9acf275cb72706472a84a7409ec6f3ac36a\_theme_color.scssc" />
+    <Content Include="FrontEnd\Assets\.sass-cache\eb65a9acf275cb72706472a84a7409ec6f3ac36a\_variables.scssc" />
+    <Content Include="FrontEnd\Assets\fonts\classy.eot" />
+    <Content Include="FrontEnd\Assets\fonts\classy.ttf" />
+    <Content Include="FrontEnd\Assets\fonts\classy.woff" />
+    <Content Include="FrontEnd\Assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="FrontEnd\Assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="FrontEnd\Assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="FrontEnd\Assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="FrontEnd\Assets\fonts\FontAwesome.otf" />
+    <Content Include="FrontEnd\Assets\fonts\icomoon.eot" />
+    <Content Include="FrontEnd\Assets\fonts\icomoon.ttf" />
+    <Content Include="FrontEnd\Assets\fonts\icomoon.woff" />
+    <Content Include="FrontEnd\Assets\scss\style.scss" />
+    <Content Include="FrontEnd\Assets\scss\_fonts.scss" />
+    <Content Include="FrontEnd\Assets\scss\_mixin.scss" />
+    <Content Include="FrontEnd\Assets\scss\_responsive.scss" />
+    <Content Include="FrontEnd\Assets\scss\_theme_color.scss" />
+    <Content Include="FrontEnd\Site1.Master" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Assets\login1\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Assets\login1\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="Assets\login1\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="Assets\login1\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="Assets\login1\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Assets\login1\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Assets\login1\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-Black.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-BlackItalic.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-Bold.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-BoldItalic.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-ExtraBold.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-ExtraBoldItalic.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-ExtraLight.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-ExtraLightItalic.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-Italic.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-Light.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-LightItalic.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-Medium.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-MediumItalic.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-Regular.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-SemiBold.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-SemiBoldItalic.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-Thin.ttf" />
+    <Content Include="Assets\login1\fonts\raleway\Raleway-ThinItalic.ttf" />
+    <Content Include="Assets\login1\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Assets\login1\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Assets\login1\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Assets\login1\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Assets\login1\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Assets\login1\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Site.Master" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

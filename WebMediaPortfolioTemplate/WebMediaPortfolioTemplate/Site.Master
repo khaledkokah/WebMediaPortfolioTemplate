@@ -1,0 +1,312 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebMediaPortfolioTemplate.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <!-- Styles Start -->
+    <link rel="shortcut icon" type="image/x-icon" href="FrontEnd/Assets/img/core-img/favicon.ico" />
+    <!-- Bootstrap -->
+    <link href="/assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/assets/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="/assets/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="/assets/build/css/custom.min.css" rel="stylesheet">
+    <script src="/assets/push.min.js"></script>
+
+    <!-- PNotify -->
+    <link href="/assets/vendors/pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="/assets/vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+    <link href="/assets/vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
+
+    <!-- Datatables -->
+    <link href="/assets/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    <link href="/Assets/css/Menu.css" rel="stylesheet" />
+
+    <link href="/assets/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <link href="/assets/build/css/ZoomOut.css" rel="stylesheet" />
+    <!-- Styles End -->
+</head>
+<body style="padding: 20px;" class="nav-md ">
+    <form runat="server">
+        <div class="container body" style="border: 1px solid #000;">
+          
+            <div class="main_container" style="background: #363636;">
+                <div class="col-md-3 left_col" style="background: #363636;">
+                    <div class="left_col scroll-view" style="background: #363636;">
+                        <div class="navbar nav_title" style="height: 0px; border: 0; background: #333">
+                            <a href="/AdminHome.aspx" class="site_title"><span>Template Admin</span></a>
+                        </div>
+
+
+                        <div class="clearfix"></div>
+
+                        <!-- menu profile quick info -->
+                        <div class="profile clearfix">
+                            <div class="profile_pic">
+                                <img src="/assets/images/user.png" alt="..." class="img-circle profile_img">
+                            </div>
+                            <div class="profile_info">
+                                <span>Welcome,</span>
+                                <h2>
+                                    <asp:LoginName ID="LoginName1" runat="server" Font-Bold="true" ForeColor="White" />
+                                </h2>
+                            </div>
+
+
+
+                            <div style="display: none;" class="form-group ">
+                                <div class="input-group top-search" style="padding: 8px;">
+                                    <input type="text" class="form-control" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">Go!</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /menu profile quick info -->
+
+                        <br />
+
+                        <!-- sidebar menu -->
+                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                            <ul runat="server" id="Ul1" class="nav side-menu">
+                                <li><a href="/AdminHome.aspx"><i class="fa fa-home"></i>Home <span class="fa"></span></a>
+
+                                </li>
+                            </ul>
+                            <div class="menu_section">
+                                <h3>
+                                    <asp:Label ID="lblNavTitle" runat="server" /></h3>
+                                <ul runat="server" id="mainMenu" class="nav side-menu">
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /sidebar menu -->
+
+                        <!-- /menu footer buttons -->
+
+                        <!-- /menu footer buttons -->
+                    </div>
+                </div>
+
+                <!-- top navigation -->
+                <div class="top_nav">
+                    <div class="nav_menu" style="background: #333;">
+                        <nav>
+                            <div class="nav toggle">
+                                <a id="menu_toggle"><i style="color: azure;" class="fa fa-bars"></i></a>
+                            </div>
+                            <div class="nav toggle">
+                                <asp:Button Text="Refresh" ID="btnRefresh" OnClick="btnRefresh_Click" CssClass="btn-dark btn-sm" runat="server" />
+
+                            </div>
+                            <div class="nav toggle">
+                                <span id="secondsIdle"></span>&nbsp;seconds.
+                            </div>
+
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="">
+                                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <img src="/assets/images/user.png" alt="">
+                                        <asp:LoginName ID="LoginName2" runat="server" Font-Bold="true" ForeColor="White" />
+                                        <span class=" fa fa-angle-down" style="color: white;"></span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                        <li><a href="../Account/ChangePassword.aspx"><i class="fa fa-lock pull-right"></i>Change Password</a></li>
+                                        <li>
+
+                                            <asp:LinkButton OnClick="lnkLogOut_Click" ID="lnkLogOut" runat="server">
+                                                <i class="fa fa-sign-out pull-right">Log out</i>
+                                            </asp:LinkButton>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- /top navigation -->
+
+                <!-- page content -->
+                <div id="rightCol" class="right_col" role="main">
+                    <div class="">
+                        <div class="page-title">
+                            <div class="title_left">
+                                <h3>
+                                    <asp:ScriptManager ID="ToolkitScriptManager1" runat="server" />
+                                    <asp:ContentPlaceHolder ID="cp_pageTitle" runat="server" />
+                                    <small>
+                                        <asp:ContentPlaceHolder ID="cp_pageDesc" runat="server" />
+                                    </small>
+                                </h3>
+                            </div>
+
+                            <div class="title_right">
+                                <div style="display: none;" class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search for...">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">Go!</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="row">
+                            <script src="../assets/vendors/moment/min/moment.min.js"></script>
+
+
+                            <script src="../assets/vendors/jquery/dist/jquery.min.js"></script>
+                            <!-- Bootstrap -->
+                            <script src="../assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+                            <asp:HiddenField ID="hd_alert" runat="server" ClientIDMode="Static" />
+                            <asp:ContentPlaceHolder ID="cp_content" runat="server" />
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /page content -->
+
+                <!-- footer content -->
+                <footer>
+                    <div class="pull-right">
+                       WebMediaPortfolioTemplate  
+                    </div>
+                    <div class="clearfix"></div>
+                </footer>
+                <!-- /footer content -->
+
+
+                <asp:LinkButton ID="lnkFake" runat="server" />
+                <ajaxToolkit:ModalPopupExtender ID="mpeTimeout" BehaviorID="mpeTimeout" runat="server" PopupControlID="pnlPopup" TargetControlID="lnkFake"
+                    OkControlID="btnYes" CancelControlID="btnNo" BackgroundCssClass="modalBackground" OnOkScript="ResetSession()">
+                </ajaxToolkit:ModalPopupExtender>
+                <asp:Panel ID="pnlPopup" runat="server" CssClass="modalPopup" Style="display: none">
+                    <div class="header">
+                        Session Expiring!
+                    </div>
+                    <div class="body">
+                        Your Session will expire in&nbsp;<span id="seconds"></span>&nbsp;seconds.<br />
+                        Do you want to reset?
+                    </div>
+                    <div class="footer" align="right">
+                        <asp:Button ID="btnYes" runat="server" Text="Yes" CssClass="yes" />
+                        <asp:Button ID="btnNo" runat="server" Text="No" CssClass="no" />
+                    </div>
+                </asp:Panel>
+                <script type="text/javascript">
+                    function SessionExpireAlert(timeout) {
+                        var seconds = timeout / 1000;
+                        document.getElementsByName("secondsIdle").innerHTML = seconds;
+                        document.getElementsByName("seconds").innerHTML = seconds;
+                        setInterval(function () {
+                            seconds--;
+                            document.getElementById("seconds").innerHTML = seconds;
+                            document.getElementById("secondsIdle").innerHTML = seconds;
+                        }, 1000);
+                        setTimeout(function () {
+                            //Show Popup before 20 seconds of timeout.
+                            $find("mpeTimeout").show();
+                        }, timeout - 20 * 1000);
+                        setTimeout(function () {
+                            window.location = "/Account/AdminLogin.aspx";
+                        }, timeout);
+                    };
+                    function ResetSession() {
+                        //Redirect to refresh Session.
+                        window.location = window.location.href;
+                    }
+
+                </script>
+
+
+            </div>
+        </div>
+
+    </form>
+
+    <!-- Scripts Start -->
+    <!-- FastClick -->
+    <script src="../assets/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../assets/vendors/nprogress/nprogress.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="../assets/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+
+    <!-- Datatables -->
+    <script src="../assets/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../assets/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="../assets/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../assets/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="../assets/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="../assets/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="../assets/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="../assets/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="../assets/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="../assets/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../assets/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="../assets/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+
+    <!-- Validate -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+
+    <!-- PNotify -->
+    <script src="../assets/vendors/pnotify/dist/pnotify.js"></script>
+    <script src="../assets/vendors/pnotify/dist/pnotify.buttons.js"></script>
+    <script src="../assets/vendors/pnotify/dist/pnotify.nonblock.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="../assets/build/js/custom.min.js"></script>
+
+
+    <script src="../assets/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var alertMsg = '<%= RequestAlert %>';
+            if (alertMsg != "") {
+                new PNotify({
+                    title: 'Success', text: alertMsg,
+                    type: 'success',
+                    styling: 'bootstrap3'
+                });
+
+                $.ajax({
+                    type: "POST",
+                    url: "/WorkflowPages/LeavePage.aspx/ClearSession",
+                    data: '{name: "RequestAlert"}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+
+                    },
+                    failure: function (response) {
+                        alert(response.d);
+                    }
+                });
+            }
+        });
+
+    </script>
+    <!-- Scripts End -->
+</body>
+</html>
